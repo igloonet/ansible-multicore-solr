@@ -12,20 +12,11 @@
 - name: Ensure curl is installed
   apt: name=curl state=present
 
-- name: Get the closest mirror for Apache Solr
-  shell: curl -s http://www.apache.org/dyn/closer.cgi/lucene/solr | sed -n '/id="http"/,/id="backup"/p' | sed -nr 's/.*href=\"(.*)\".*/\1/p' | sed -n 1p
-  register: jiv_solr__closestMirror
-  changed_when: false
-
-- name: Print closest mirror
-  debug: msg="Closest mirror found - {{ jiv_solr__closestMirror.stdout }}"
-#"
-
 - name: Ensure that temp folder is present
   file: dest={{ jiv_solr__tempPath }} state=directory
 
 - name: Download Apache Solr
-  get_url: url={{ jiv_solr__closestMirror.stdout }}/{{ jiv_solr__downloadPath }} dest={{ jiv_solr__saveTarPath }}
+  get_url: url=http://apache.claz.org/lucene/solr/{{ jiv_solr__downloadPath }} dest={{ jiv_solr__saveTarPath }}
 
 - name: Ensure that Apache Solr install folder exists
   file: dest={{ jiv_solr__installPath }} state=directory
