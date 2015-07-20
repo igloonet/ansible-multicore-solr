@@ -1,9 +1,9 @@
 ---
-jiv_solr__version: 4.7.2
+jiv_solr__version: 4.10.4
 
 ## search_api_solr Drupal module ##
 #Version
-jiv_solr__searchApiSolrVersion: 7.x-1.6
+jiv_solr__searchApiSolrVersion: 7.x-1.8
 jiv_solr__searchApiSolrId: search_api_solr-{{ jiv_solr__searchApiSolrVersion }}
 #Path to the Solr configuration
 jiv_solr__searchApiSolrConfPath: "{{ jiv_solr__searchApiSolrId }}/solr-conf/4.x"
