@@ -32,11 +32,11 @@ jiv_solr__cores:
 # Uninstalling
 # You can easily override these on the command line.
 # E.g. ansible-playbook -i hosts play.yml -e jiv_solr__uninstall=true -e jiv_solr__uninstallDependencies=true
-jiv_solr__uninstall: no
-jiv_solr__uninstallDependencies: no
+jiv_solr__uninstall: false
+jiv_solr__uninstallDependencies: false
 
 # Not yet implemented
-jiv_solr__passwordProtection: no
+jiv_solr__passwordProtection: false
 
 ## Traffic allowed only from these hosts:
 #
